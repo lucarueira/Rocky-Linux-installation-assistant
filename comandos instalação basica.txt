@@ -1,0 +1,95 @@
+Usando o Rocky Linux 9.2 Server 
+
+Atualizar a lista de pacotes:
+
+    sudo dnf update   
+
+Instalar um novo pacote:
+
+sudo dnf install nome-do-pacote
+    sudo dnf install vim  
+    sudo dnf install nano
+
+Remover um pacote:
+
+    sudo dnf remove nome-do-pacote
+
+Verificar informações do sistema:
+
+    uname -a
+  
+Verificar a versão do sistema operacional:
+
+    cat /etc/os-release
+
+Verificar informações de hardware:
+
+    lscpu
+
+Verificar espaço em disco:
+
+    df -h
+
+Adicionar um novo usuário:
+
+    sudo useradd nome-do-usuario
+
+Definir senha para o usuário:
+
+    sudo passwd nome-do-usuario
+
+Adicionar o usuário ao grupo sudo (administradores):
+
+  sudo usermod -aG sudo "nome-do-usuario"
+
+
+
+  Redes e Conectividade:
+
+
+Verificar configurações de rede:
+
+    ip a
+
+Reiniciar o serviço de rede:
+
+  sudo systemctl restart network
+
+
+
+Segurança:
+
+Atualizar o sistema para corrigir vulnerabilidades:
+
+    sudo dnf upgrade
+
+Configurar o firewall (usando firewalld):
+
+    sudo systemctl start firewalld
+    sudo systemctl enable firewalld
+    sudo firewall-cmd --add-port=PORTA/tcp --permanent   # Substitua PORTA pelo número da porta que você deseja abrir
+    sudo firewall-cmd --reload
+  
+USANDO o SSH
+
+    usando o ip a  pegar o ip inet
+
+    no Cmder usar :
+      ssh nome-do-usario@endereço-do-servidor 
+      naturalmente usa-se a porta 22.
+  Comando ss:
+    sudo ss -tuln
+          : Ele fornece informações mais detalhadas sobre as conexões de rede e as portas de escuta.
+  
+  Mudando a Porta ssh :
+
+        sudo nano /etc/ssh/sshd_config
+
+          No arquivo na linha 
+          Port 22
+        alterar e reiniciar o ssh 
+        sudo systemctl restart sshd
+  
+
+  
+
